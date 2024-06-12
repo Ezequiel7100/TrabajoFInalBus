@@ -21,6 +21,7 @@ public class FormularioColectivo extends javax.swing.JInternalFrame {
     private final String expRegMatricula = "^[A-Z]{2}[0-9]{3}[A-Z]{2}$";
     private ColectivoData coleData;
     List<Colectivo> colectivos;
+
     public FormularioColectivo() {
         initComponents();
         coleData = new ColectivoData();
@@ -136,46 +137,50 @@ public class FormularioColectivo extends javax.swing.JInternalFrame {
         String matricula, modelo, marca;
         int capacidad;
         Colectivo colectivo;
-        
+
         //validar matricula
-        if(jtfMatricula.getText().toUpperCase().matches(expRegMatricula)){
-           matricula = jtfMatricula.getText().toUpperCase();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese una matricula válida (AB123CD)");
-           return;
+        if (jtfMatricula.getText().toUpperCase().matches(expRegMatricula)) {
+            matricula = jtfMatricula.getText().toUpperCase();
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese una matricula válida (AB123CD)");
+            return;
         }
         //validar matricula
-        
+
         //validar marca
-        if(!jtfMarca.getText().equals("")){
+        if (!jtfMarca.getText().equals("")) {
             marca = jtfMarca.getText();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese una marca");
-           return; 
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese una marca");
+            return;
         }
         //validar marca
-        
+
         //validar modelo
-        if(!jtfModelo.getText().equals("")){
+        if (!jtfModelo.getText().equals("")) {
             modelo = jtfModelo.getText();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese un modelo");
-           return; 
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese un modelo");
+            return;
         }
         //validar modelo
-        
-        capacidad = Integer.parseInt(jcbCapacidad.getSelectedItem()+"");
-        
+
+        capacidad = Integer.parseInt(jcbCapacidad.getSelectedItem() + "");
+
         //matricula repetida
         colectivos = coleData.listarColectivos();
-        for(Colectivo c : colectivos){
-            if(c.getMatricula().toUpperCase().equals(matricula)){
+        for (Colectivo c : colectivos) {
+            if (c.getMatricula().toUpperCase().equals(matricula)) {
                 JOptionPane.showMessageDialog(this, "Ingrese una matricula que no este repetida");
                 return;
             }
         }
         //matricula repetida
-        
+
+        jtfMarca.setText("");
+        jtfMatricula.setText("");
+        jtfModelo.setText("");
+
         colectivo = new Colectivo();
         colectivo.setMarca(marca);
         colectivo.setModelo(modelo);

@@ -23,6 +23,7 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
     private final String expRegMail = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9]+)*(?:\\.[A-Za-z]+)$";
     private PasajeroData pasaData;
     List<Pasajero> pasajeros;
+
     public FormularioPasajero() {
         initComponents();
         pasaData = new PasajeroData();
@@ -140,65 +141,72 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         Pasajero pasajero = new Pasajero();
-        String nombre,apellido,dni,correo,telefono;
-        
+        String nombre, apellido, dni, correo, telefono;
+
         //validar nombre y apellido
-        if(!jtfNombre.getText().matches(expRegNyA) || !jtfApellido.getText().matches(expRegNyA)){
+        if (!jtfNombre.getText().matches(expRegNyA) || !jtfApellido.getText().matches(expRegNyA)) {
             JOptionPane.showMessageDialog(this, "Ingrese un nombre y apellido válidos");
             return;
-        }else{
+        } else {
             nombre = jtfNombre.getText();
             apellido = jtfApellido.getText();
         }
         //validar nombre y apellido
-        
+
         //validar dni
-        if(!jtfDni.getText().matches(expRegDni)){            
+        if (!jtfDni.getText().matches(expRegDni)) {
             JOptionPane.showMessageDialog(this, "Ingrese un dni válido(8 cifras)");
             return;
-        }else{
+        } else {
             dni = jtfDni.getText();
         }
         //validar dni
-        
+
         //validar correo
-        if(!jtfCorreo.getText().matches(expRegMail)){
+        if (!jtfCorreo.getText().matches(expRegMail)) {
             JOptionPane.showMessageDialog(this, "Ingrese un correo válido(***@***.***)");
-            return;            
-        }else{
+            return;
+        } else {
             correo = jtfCorreo.getText();
         }
         //validar correo
-        
+
         //validar tel
-        if(!jtfTelefono.getText().matches("^\\d+$")){
+        if (!jtfTelefono.getText().matches("^\\d+$")) {
             JOptionPane.showMessageDialog(this, "Ingrese un telefono válido(solo numeros)");
-            return;            
-        }else{
+            return;
+        } else {
             telefono = jtfTelefono.getText();
         }
         //validar tel
-        
+
         //dni/correo repetido
         pasajeros = pasaData.listarPasajeros();
-        for(Pasajero p : pasajeros){
-            if(p.getDni().equals(jtfDni.getText())){
+        for (Pasajero p : pasajeros) {
+            if (p.getDni().equals(jtfDni.getText())) {
                 JOptionPane.showMessageDialog(this, "Ingrese un dni que no este repetido");
                 return;
             }
-            if(p.getCorreo().equals(jtfCorreo.getText())){
+            if (p.getCorreo().equals(jtfCorreo.getText())) {
                 JOptionPane.showMessageDialog(this, "Ingrese un correo que no este repetido");
                 return;
             }
         }
         //dni/correo repetido
-        
+
+        jtfApellido.setText("");
+        jtfDni.setText("");
+        jtfNombre.setText("");
+        jtfTelefono.setText("");
+        jtfCorreo.setText("");
+
         pasajero.setNombre(nombre);
         pasajero.setApellido(apellido);
         pasajero.setCorreo(correo);
         pasajero.setTelefono(telefono);
         pasajero.setDni(dni);
         pasaData.guardarPasajero(pasajero);
+
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

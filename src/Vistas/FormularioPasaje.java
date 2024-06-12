@@ -33,7 +33,7 @@ public class FormularioPasaje extends javax.swing.JInternalFrame {
     private List<Pasajero> pasajeros;
     private List<Colectivo> colectivos;
     private List<Ruta> rutas;
-    private final String expRegHora = "^(0?[1-9]|1[0-9]|2[0-3])$";
+    private final String expRegHora = "^(0?[0-9]|1[0-9]|2[0-3])$";
     private final String expRegMin = "^(0?[1-9]|[0-5][0-9])$";
     private final String expRegNum = "^[1-9]+\\d*$";
 
@@ -220,7 +220,7 @@ public class FormularioPasaje extends javax.swing.JInternalFrame {
         Ruta r = new Ruta();
         Time hora;
         LocalDate fecha, hoy;
-        LocalTime ahora,horaLT;
+        LocalTime ahora, horaLT;
         String h, min;
         int asiento;
         float precio;
@@ -253,28 +253,27 @@ public class FormularioPasaje extends javax.swing.JInternalFrame {
 
         //validar fecha y hora
         try {
-        if (validarHora()) {
-            h = jtfHora.getText();
-            min = jtfMin.getText();
-            hora = Time.valueOf(h + ":" + min + ":00");
-            ahora = LocalTime.now();
-            horaLT = hora.toLocalTime();
-            fecha = LocalDate.parse(ff.format(jCalendar.getCalendar().getTime()));  
-            hoy = LocalDate.now();            
-            if((horaLT.isBefore(ahora) && fecha.equals(hoy)) || (fecha.isBefore(hoy))){
-                JOptionPane.showMessageDialog(this, "Ingrese una hora y fecha posterior a la actual");
-                return;                
+            if (validarHora()) {
+                h = jtfHora.getText();
+                min = jtfMin.getText();
+                hora = Time.valueOf(h + ":" + min + ":00");
+                ahora = LocalTime.now();
+                horaLT = hora.toLocalTime();
+                fecha = LocalDate.parse(ff.format(jCalendar.getCalendar().getTime()));
+                hoy = LocalDate.now();
+                if ((horaLT.isBefore(ahora) && fecha.equals(hoy)) || (fecha.isBefore(hoy))) {
+                    JOptionPane.showMessageDialog(this, "Ingrese una hora y fecha posterior a la actual");
+                    return;
+                }
+            } else {
+                return;
             }
-        } else {
-            return;
-        }
             asientosOcupados = pasaData.controlAsientos(fecha, hora, c, r);//asientos ocupados aca para inicializarlo
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(this, "Ingrese una fecha válida");
             return;
         }
         //validar fecha y hora
-        
 
         //validar asientos
         if (asientosOcupados.size() >= c.getCapacidad()) {
@@ -296,21 +295,27 @@ public class FormularioPasaje extends javax.swing.JInternalFrame {
             return;
         }
         //validar asientos
-        
+
         //validar precio
-        if(validarNum(jtfPrecio)){
+        if (validarNum(jtfPrecio)) {
             precio = Integer.parseInt(jtfPrecio.getText());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Ingrese un precio válido");
             return;
         }
         //validar precio
-        
+
         //creo el pasaje
-        Pasaje pasaje = new Pasaje(p,c,r,fecha,hora,asiento,precio);
+        Pasaje pasaje = new Pasaje(p, c, r, fecha, hora, asiento, precio);
         //creo el pasaje
-                
+
         pasaData.GuardarPasaje(pasaje);
+
+        jtfHora.setText("");
+        jtfMin.setText("");
+        jtfAsiento.setText("");
+        jtfPrecio.setText("");
+
     }//GEN-LAST:event_jbVenderpasajeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -24,7 +24,7 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
     /**
      * Creates new form FormularioHorario
      */
-    private final String expRegHora = "^(0?[1-9]|1[0-9]|2[0-3])$";
+    private final String expRegHora = "^(0?[0-9]|1[0-9]|2[0-3])$";
     private final String expRegMin = "^(0?[1-9]|[0-5][0-9])$";
     private RutaData rutaData;
     private HorarioData horaData;
@@ -271,7 +271,7 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
         String h, min, origen, destino;
         Ruta rutaConId, ruta = new Ruta();
         Horario horario = new Horario();
-        long hours,minutes;
+        long hours, minutes;
         Duration duracion;
 
         //validar horario salida
@@ -301,7 +301,7 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
         }
         origen = jtfOrigen.getText();
         destino = jtfDestino.getText();
-        //validar ruta   
+        //validar ruta
 
         LocalTime salida = horaSalida.toLocalTime();
         LocalTime llegada = horaLlegada.toLocalTime();
@@ -327,19 +327,19 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
         ruta.setDestino(destino);
         ruta.setDuracion_estimada(duracionTime);
         rutaConId = rutaData.GuardarRuta(ruta);
-        if(rutaConId.getId_ruta()==0){
+        if (rutaConId.getId_ruta() == 0) {
             JOptionPane.showMessageDialog(this, "La ruta no pudo agregarse");
             return;
         }
         //creo la ruta
-        
+
         //creo el horario con la ruta anterior
         horario.setRuta(rutaConId);
         horario.setHora_salida(horaSalida);
         horario.setHora_llegada(horaLlegada);
         horaData.GuardarHorario(horario);
         //creo el horario con la ruta anterior
-        
+
         //actualizo el combo
         cargarCombo();
         //actualizo el combo
