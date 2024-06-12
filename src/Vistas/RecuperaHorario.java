@@ -30,6 +30,7 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
     RutaData rutaData;
     List<Horario> horarios;
     List<Ruta> rutas;
+
     public RecuperaHorario() {
         initComponents();
         horaData = new HorarioData();
@@ -71,6 +72,9 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jtTabla);
 
+        jbRecuperar.setBackground(new java.awt.Color(0, 102, 204));
+        jbRecuperar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRecuperar.setForeground(new java.awt.Color(255, 255, 255));
         jbRecuperar.setText("Recuperar horario");
         jbRecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,9 +84,13 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 3, 102));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 125));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Horarios eliminados");
 
+        jbRestaurar.setBackground(new java.awt.Color(0, 153, 0));
+        jbRestaurar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRestaurar.setForeground(new java.awt.Color(255, 255, 255));
         jbRestaurar.setText("Restaurar");
         jbRestaurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +98,9 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
             }
         });
 
+        jbBuscarRuta.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarRuta.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarRuta.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarRuta.setText("Buscar por ruta");
         jbBuscarRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,25 +108,27 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
             }
         });
 
+        jcbBuscarRuta.setMinimumSize(new java.awt.Dimension(72, 24));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbBuscarRuta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcbBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jcbBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbRecuperar))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbRestaurar)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,14 +137,14 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(1, 1, 1)
                 .addComponent(jbRestaurar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbRecuperar)
                     .addComponent(jbBuscarRuta)
-                    .addComponent(jcbBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                    .addComponent(jcbBuscarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,7 +182,6 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jbBuscarRutaActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -204,7 +216,7 @@ public class RecuperaHorario extends javax.swing.JInternalFrame {
             modelo.removeRow(i);
         }
     }
-    
+
     private void cargarCombo() {
         rutas = rutaData.listarRutas();
         for (Ruta r : rutas) {

@@ -26,6 +26,7 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
     };
     ColectivoData coleData;
     List<Colectivo> colectivos;
+
     public RecuperaColectivo() {
         initComponents();
         coleData = new ColectivoData();
@@ -52,6 +53,9 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
+        jbRecuperar.setBackground(new java.awt.Color(0, 102, 204));
+        jbRecuperar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRecuperar.setForeground(new java.awt.Color(255, 255, 255));
         jbRecuperar.setText("Recuperar colectivo");
         jbRecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,9 +65,13 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 3, 102));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 125));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Colectivos eliminados");
 
+        jbRestaurar.setBackground(new java.awt.Color(0, 153, 0));
+        jbRestaurar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRestaurar.setForeground(new java.awt.Color(255, 255, 255));
         jbRestaurar.setText("Restaurar");
         jbRestaurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +92,9 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jtTabla);
 
+        jbBuscarId.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarId.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarId.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarId.setText("Buscar por ID");
         jbBuscarId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,9 +107,9 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbBuscarId)
@@ -109,7 +120,7 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbRestaurar)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,14 +129,14 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(1, 1, 1)
                 .addComponent(jbRestaurar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbBuscarId)
                     .addComponent(jtfBuscarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbRecuperar))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,10 +171,9 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
         c = coleData.buscarColectivoPorIdBorrado(id);
         if (c != null) {
             borrarFilas();
-            modelo.addRow(new Object[]{c.getId_colectivo(),c.getMarca(),c.getModelo(),c.getMatricula(),c.getCapacidad()});
+            modelo.addRow(new Object[]{c.getId_colectivo(), c.getMarca(), c.getModelo(), c.getMatricula(), c.getCapacidad()});
         }
     }//GEN-LAST:event_jbBuscarIdActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -179,7 +189,7 @@ public class RecuperaColectivo extends javax.swing.JInternalFrame {
         borrarFilas();
         colectivos = coleData.listarColectivosBorrados();
         for (Colectivo c : colectivos) {
-            modelo.addRow(new Object[]{c.getId_colectivo(),c.getMarca(),c.getModelo(),c.getMatricula(),c.getCapacidad()});
+            modelo.addRow(new Object[]{c.getId_colectivo(), c.getMarca(), c.getModelo(), c.getMatricula(), c.getCapacidad()});
         }
     }
 

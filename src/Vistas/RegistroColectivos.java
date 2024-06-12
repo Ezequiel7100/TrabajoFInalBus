@@ -27,7 +27,7 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
     ColectivoData coleData;
     List<Colectivo> colectivos;
     private final String expRegMatricula = "^[A-Z]{2}[0-9]{3}[A-Z]{2}$";
-    
+
     public RegistroColectivos() {
         initComponents();
         coleData = new ColectivoData();
@@ -70,9 +70,13 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 3, 102));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 125));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Registro de colectivos");
 
+        jbModificar.setBackground(new java.awt.Color(0, 102, 204));
+        jbModificar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         jbModificar.setEnabled(false);
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +85,9 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
             }
         });
 
+        jbBorrar.setBackground(new java.awt.Color(255, 51, 0));
+        jbBorrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBorrar.setForeground(new java.awt.Color(255, 255, 255));
         jbBorrar.setText("Borrar");
         jbBorrar.setEnabled(false);
         jbBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +100,9 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
 
         jtfId.setEnabled(false);
 
+        jbRestaurar.setBackground(new java.awt.Color(0, 153, 0));
+        jbRestaurar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRestaurar.setForeground(new java.awt.Color(255, 255, 255));
         jbRestaurar.setText("Restaurar");
         jbRestaurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +116,9 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jbBuscarMatricula.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarMatricula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarMatricula.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarMatricula.setText("Buscar por matricula");
         jbBuscarMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +126,9 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
             }
         });
 
+        jbBuscarId.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarId.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarId.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarId.setText("Buscar por ID");
         jbBuscarId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,41 +173,39 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfModelo))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jbModificar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbBorrar))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jtfMatricula))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(17, 17, 17)
-                                            .addComponent(jcbCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE)))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jbModificar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbBorrar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtfMatricula))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(jcbCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(28, 28, 28)
+                                .addComponent(jtfMarca))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(21, 21, 21)
+                                .addComponent(jtfModelo)))
+                        .addGap(18, 18, 18)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +218,7 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbRestaurar)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,45 +226,46 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbRestaurar)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfMarca)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfModelo)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfMatricula)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcbCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbBorrar)
-                            .addComponent(jbModificar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbBuscarMatricula)
-                            .addComponent(jtfBuscarMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(77, 77, 77)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtfBuscarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbBuscarId))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtfMarca)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfModelo))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtfMatricula)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcbCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jbBorrar)
+                                    .addComponent(jbModificar)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jbBuscarMatricula)
+                                    .addComponent(jtfBuscarMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(65, 65, 65)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jtfBuscarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbBuscarId))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -265,19 +280,19 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
         if (fila != -1) {
             String capaS;
             int capaI;
-            jtfMarca.setText(modelo.getValueAt(fila, 1)+"");
+            jtfMarca.setText(modelo.getValueAt(fila, 1) + "");
             jtfMarca.setEnabled(true);
-            jtfModelo.setText(modelo.getValueAt(fila, 2)+"");
+            jtfModelo.setText(modelo.getValueAt(fila, 2) + "");
             jtfModelo.setEnabled(true);
-            jtfMatricula.setText(modelo.getValueAt(fila, 3)+"");
+            jtfMatricula.setText(modelo.getValueAt(fila, 3) + "");
             jtfMatricula.setEnabled(true);
-            capaS = modelo.getValueAt(fila, 4)+"";
+            capaS = modelo.getValueAt(fila, 4) + "";
             capaI = Integer.parseInt(capaS);
             jcbCapacidad.setEnabled(true);
-            if(capaI==30){
+            if (capaI == 30) {
                 jcbCapacidad.setSelectedIndex(0);
             }
-            if(capaI==40){
+            if (capaI == 40) {
                 jcbCapacidad.setSelectedIndex(1);
             }
             jtfId.setText(modelo.getValueAt(fila, 0) + "");
@@ -289,37 +304,37 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
         Colectivo c = new Colectivo();
         String marca, modeloC, matricula;
-        
+
         //validar matricula
-        if(jtfMatricula.getText().toUpperCase().matches(expRegMatricula)){
-           matricula = jtfMatricula.getText().toUpperCase();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese una matricula válida (AB123CD)");
-           return;
+        if (jtfMatricula.getText().toUpperCase().matches(expRegMatricula)) {
+            matricula = jtfMatricula.getText().toUpperCase();
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese una matricula válida (AB123CD)");
+            return;
         }
         //validar matricula
-        
+
         //validar marca
-        if(!jtfMarca.getText().equals("")){
+        if (!jtfMarca.getText().equals("")) {
             marca = jtfMarca.getText();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese una marca");
-           return; 
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese una marca");
+            return;
         }
         //validar marca
-        
+
         //validar modelo
-        if(!jtfModelo.getText().equals("")){
+        if (!jtfModelo.getText().equals("")) {
             modeloC = jtfModelo.getText();
-        }else{
-           JOptionPane.showMessageDialog(this, "Ingrese un modelo");
-           return; 
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese un modelo");
+            return;
         }
         //validar modelo
-        
+
         c.setEstado(true);
         c.setId_colectivo(Integer.parseInt(jtfId.getText()));
-        c.setCapacidad(Integer.parseInt(jcbCapacidad.getSelectedItem()+""));
+        c.setCapacidad(Integer.parseInt(jcbCapacidad.getSelectedItem() + ""));
         c.setMarca(marca);
         c.setModelo(modeloC);
         c.setMatricula(matricula);
@@ -329,7 +344,7 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
 
     private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
         int id;
-        id = Integer.parseInt(jtfId.getText());        
+        id = Integer.parseInt(jtfId.getText());
         Colectivo c = new Colectivo();
         c.setId_colectivo(id);
         coleData.EliminarColectivo(c);
@@ -351,7 +366,7 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
         c = coleData.buscarColectivoPorId(id);
         if (c != null) {
             borrarFilas();
-            modelo.addRow(new Object[]{c.getId_colectivo(),c.getMarca(),c.getModelo(),c.getMatricula(),c.getCapacidad()});
+            modelo.addRow(new Object[]{c.getId_colectivo(), c.getMarca(), c.getModelo(), c.getMatricula(), c.getCapacidad()});
         }
     }//GEN-LAST:event_jbBuscarIdActionPerformed
 
@@ -364,10 +379,9 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
         c = coleData.buscarColectivoPorMatricula(jtfBuscarMatricula.getText());
         if (c != null) {
             borrarFilas();
-            modelo.addRow(new Object[]{c.getId_colectivo(),c.getMarca(),c.getModelo(),c.getMatricula(),c.getCapacidad()});
+            modelo.addRow(new Object[]{c.getId_colectivo(), c.getMarca(), c.getModelo(), c.getMatricula(), c.getCapacidad()});
         }
     }//GEN-LAST:event_jbBuscarMatriculaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -397,7 +411,7 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
         borrarFilas();
         colectivos = coleData.listarColectivos();
         for (Colectivo c : colectivos) {
-            modelo.addRow(new Object[]{c.getId_colectivo(),c.getMarca(),c.getModelo(),c.getMatricula(),c.getCapacidad()});
+            modelo.addRow(new Object[]{c.getId_colectivo(), c.getMarca(), c.getModelo(), c.getMatricula(), c.getCapacidad()});
         }
     }
 
@@ -431,5 +445,5 @@ public class RegistroColectivos extends javax.swing.JInternalFrame {
         jbModificar.setEnabled(false);
         jbBorrar.setEnabled(false);
     }
-    
+
 }

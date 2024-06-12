@@ -29,8 +29,7 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
     private final String expRegNyA = "^[^\\d\\s]\\D*$";
     private final String expRegDni = "^[1-9]{1}[\\d]{7}$";
     private final String expRegMail = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9]+)*(?:\\.[A-Za-z]+)$";
-    
-    
+
     public RegistroPasajeros() {
         initComponents();
         pasaData = new PasajeroData();
@@ -80,6 +79,7 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 3, 102));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 125));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Registro de pasajeros");
 
@@ -123,6 +123,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jbBuscarDni.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarDni.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarDni.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarDni.setText("Buscar por DNI");
         jbBuscarDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +133,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
             }
         });
 
+        jbBuscarId.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarId.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarId.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarId.setText("Buscar por ID");
         jbBuscarId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +147,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Apellido");
 
+        jbBuscarNyA.setBackground(new java.awt.Color(0, 102, 204));
+        jbBuscarNyA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBuscarNyA.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscarNyA.setText("Buscar por nombre y apellido ");
         jbBuscarNyA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +157,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
             }
         });
 
+        jbModificar.setBackground(new java.awt.Color(0, 102, 204));
+        jbModificar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         jbModificar.setEnabled(false);
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +168,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
             }
         });
 
+        jbBorrar.setBackground(new java.awt.Color(255, 51, 51));
+        jbBorrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbBorrar.setForeground(new java.awt.Color(255, 255, 255));
         jbBorrar.setText("Borrar");
         jbBorrar.setEnabled(false);
         jbBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +183,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
         jtfId.setEnabled(false);
 
+        jbRestaurar.setBackground(new java.awt.Color(0, 153, 51));
+        jbRestaurar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbRestaurar.setForeground(new java.awt.Color(255, 255, 255));
         jbRestaurar.setText("Restaurar");
         jbRestaurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,40 +199,34 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfApellido))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfDni))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfCorreo))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfTelefono))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jbModificar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbBorrar)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jbModificar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                                .addComponent(jbBorrar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfNombre)
+                                    .addComponent(jtfTelefono)
+                                    .addComponent(jtfCorreo)
+                                    .addComponent(jtfDni)
+                                    .addComponent(jtfApellido))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -228,21 +240,20 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
                                     .addComponent(jbBuscarDni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jbBuscarId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtfBuscarApellido))
+                                .addGap(50, 50, 50)
+                                .addComponent(jbBuscarNyA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtfBuscarNombre))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                                .addComponent(jbBuscarNyA)
-                                .addGap(35, 35, 35))))
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtfBuscarApellido))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbRestaurar)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,27 +261,27 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbRestaurar)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfNombre)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfApellido)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfDni)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(27, 27, 27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfCorreo)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfTelefono)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -278,7 +289,7 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbBorrar)
                             .addComponent(jbModificar)))
@@ -286,11 +297,11 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtfBuscarDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbBuscarDni))
-                        .addGap(36, 36, 36)
+                        .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtfBuscarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbBuscarId))
-                        .addGap(74, 74, 74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtfBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
@@ -299,10 +310,9 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
                             .addComponent(jtfBuscarApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
-                        .addComponent(jbBuscarNyA)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jbBuscarNyA))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -380,45 +390,45 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
         Pasajero p = new Pasajero();
-        String nombre,apellido,correo,tel,dni;
-        
+        String nombre, apellido, correo, tel, dni;
+
         //validar nombre y apellido
-        if(!jtfNombre.getText().matches(expRegNyA) || !jtfApellido.getText().matches(expRegNyA)){
+        if (!jtfNombre.getText().matches(expRegNyA) || !jtfApellido.getText().matches(expRegNyA)) {
             JOptionPane.showMessageDialog(this, "Ingrese un nombre y apellido válidos");
             return;
-        }else{
+        } else {
             nombre = jtfNombre.getText();
             apellido = jtfApellido.getText();
         }
         //validar nombre y apellido
-        
+
         //validar dni
-        if(!jtfDni.getText().matches(expRegDni)){            
+        if (!jtfDni.getText().matches(expRegDni)) {
             JOptionPane.showMessageDialog(this, "Ingrese un dni válido(8 cifras)");
             return;
-        }else{
+        } else {
             dni = jtfDni.getText();
         }
         //validar dni
-        
+
         //validar correo
-        if(!jtfCorreo.getText().matches(expRegMail)){
+        if (!jtfCorreo.getText().matches(expRegMail)) {
             JOptionPane.showMessageDialog(this, "Ingrese un correo válido(***@***.***)");
-            return;            
-        }else{
+            return;
+        } else {
             correo = jtfCorreo.getText();
         }
         //validar correo
-        
+
         //validar tel
-        if(!jtfTelefono.getText().matches("^\\d+$")){
+        if (!jtfTelefono.getText().matches("^\\d+$")) {
             JOptionPane.showMessageDialog(this, "Ingrese un telefono válido(solo numeros)");
-            return;            
-        }else{
+            return;
+        } else {
             tel = jtfTelefono.getText();
         }
         //validar tel
-        
+
         p.setId_pasajero(Integer.parseInt(jtfId.getText()));
         p.setNombre(nombre);
         p.setApellido(apellido);
@@ -432,7 +442,7 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
 
     private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
         int id;
-        id = Integer.parseInt(jtfId.getText());        
+        id = Integer.parseInt(jtfId.getText());
         Pasajero p = new Pasajero();
         p.setId_pasajero(id);
         pasaData.EliminarPasajero(p);
@@ -494,7 +504,7 @@ public class RegistroPasajeros extends javax.swing.JInternalFrame {
             modelo.removeRow(i);
         }
     }
-    
+
     private void terminarManipulacion() {
         restaurarTabla();
         jtfNombre.setEnabled(false);

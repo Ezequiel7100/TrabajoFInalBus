@@ -55,6 +55,7 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 3, 102));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 125));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Formulario pasajero");
 
@@ -73,6 +74,9 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Correo electrónico");
 
+        jbGuardar.setBackground(new java.awt.Color(0, 102, 204));
+        jbGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +115,7 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
@@ -133,7 +137,7 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
                 .addComponent(jtfCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(jbGuardar)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -192,8 +196,8 @@ public class FormularioPasajero extends javax.swing.JInternalFrame {
                 return;
             }
         }
-        //dni/correo repetido
 
+        //dni/correo repetido
         jtfApellido.setText("");
         jtfDni.setText("");
         jtfNombre.setText("");
