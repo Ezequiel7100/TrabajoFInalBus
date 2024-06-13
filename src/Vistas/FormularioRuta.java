@@ -270,6 +270,11 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
         //creo objeto horario
 
         horaData.GuardarHorario(horario);
+        
+        jtfHoraSalida.setText("");
+        jtfHoraLlegada.setText("");
+        jtfMinSalida.setText("");
+        jtfMinLlegada.setText("");
     }//GEN-LAST:event_jbGuardarHorarioActionPerformed
 
     private void jbGuardarHorarioRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarHorarioRutaActionPerformed
@@ -345,6 +350,13 @@ public class FormularioRuta extends javax.swing.JInternalFrame {
         horario.setHora_llegada(horaLlegada);
         horaData.GuardarHorario(horario);
         //creo el horario con la ruta anterior
+        
+        jtfOrigen.setText("");
+        jtfDestino.setText("");
+        jtfHoraSalida.setText("");
+        jtfHoraLlegada.setText("");
+        jtfMinSalida.setText("");
+        jtfMinLlegada.setText("");
 
         //actualizo el combo
         cargarCombo();
